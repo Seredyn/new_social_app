@@ -3,8 +3,8 @@ import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
 
 void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(
+  WidgetsFlutterBinding.ensureInitialized();//этот метод нужно вызывать перед тем, как мы будем использовать нативный код. Следующий метод (await Firebase.initializeApp) использует именно нативный код на бекграунде)
+  await Firebase.initializeApp( //(await Firebase.initializeApp) использует именно нативный код на бекграунде)
     options: DefaultFirebaseOptions.currentPlatform,
   );
   runApp(MyApp());
